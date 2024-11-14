@@ -1,5 +1,6 @@
 use peter_data_eng::{extract, query, transform_load};
 use std::env;
+use std::time::Instant;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -9,6 +10,7 @@ fn main() {
     }
 
     let action = &args[1];
+    let now = Instant::now();
     match action.as_str() {
         "extract" => {
             extract(
@@ -36,4 +38,5 @@ fn main() {
             println!("Invalid action. Use 'extract', 'transform_load', or 'query'.");
         }
     }
+    println!("Time Taken: {:.2?}", now.elapsed());
 }
