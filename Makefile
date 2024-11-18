@@ -10,17 +10,8 @@ pylint:
 pytest:
 	python -m pytest -cov=main test_main.py -v
 
-pyextract:
-	python main.py extract
-
-pytransform_load: 
-	python main.py transform_load
-
-pyquery:
-	python main.py general_query
-
 	
-pyall: install format lint test extract transform_load query
+pyall: pyinstall pyformat pylint pytest 
 
 
 format:
@@ -32,8 +23,9 @@ lint:
 test:
 	cargo test --quiet
 
-run:
-	cargo run
+init:
+	cargo run init train.csv
+	
 release:
 	cargo build --release
 
@@ -43,24 +35,15 @@ install:
 	# rustup update stable
 	# rustup default stable 
 
-all: format lint test run
+all: format lint test run release
 
 # Custom tasks
 
-extract: 
-	cargo run extract
+read: 
+	cargo run read
 
 transform_load:
 	cargo run transform_load
 
-create:
-	cargo run query "INSERT INTO ServeTimesDB (server, seconds_before_next_point, day, opponent, game_score, sets, game) VALUES ('John Doe', 40, '2023-09-05', 'Jane Doe', '30-40', 1, '0-0');"
-
-read:
-	cargo run query "SELECT * FROM ServeTimesDB WHERE server = 'John Doe';"
-
-update:
-	cargo run query "UPDATE ServeTimesDB SET server='John Doe', seconds_before_next_point=40, day='2023-09-05', opponent='Jane Doe', game_score='30-40', sets=1, game='0-0' WHERE id=1;"
-
-delete:
-	cargo run query "DELETE FROM ServeTimesDB WHERE id=3;"
+query:
+	cargo run query "WITH mean_room_age as (SELECT HouseAge, AVG(AveRooms) as average_age_rooms FROM tbl_housing_data GROUP BY HouseAge ) SELECT * FROM tbl_housing_data t1 LEFT JOIN mean_room_age t2 ON t1.HouseAge = t2.HouseAge WHERE t1.AveRooms <= average_age_rooms"

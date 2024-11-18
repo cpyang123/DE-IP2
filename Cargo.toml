@@ -6,8 +6,11 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-reqwest = { version = "^0.11", features = ["blocking"] }
-rusqlite = "^0.29"
-csv = "^1.0"
-assert_cmd = "^2.0"
-predicates = "0.9"
+clap = { version = "3.0", features = ["derive"] }
+sqlx = { version = "0.7", features = ["runtime-tokio-native-tls", "sqlite"] }
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+csv = "1.1"
+reqwest = "0.11.8"  # Example version
+idna = "1.0.1"  # Replace with a stable version
+rusqlite = "0.30"
