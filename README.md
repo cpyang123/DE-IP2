@@ -168,7 +168,7 @@ We provide both the python and rust-based implementation here.
     cargo run read --id <id>
 
     # Python
-    python main.py read --id <id>
+    python main.py read <id>
     ```
 
 5. **Delete a Record**:
@@ -220,3 +220,10 @@ Time taken: 4.361656ms
 ./target/release/peter_data_eng init train.csv 
 ```
 Time taken: 309.027212ms
+
+
+### LLM Contribution
+
+I've used LLM to double check and generate test cases and double check syntaxes for Rust. I also consulted ChatGPT on ideas to create the functions.
+
+
