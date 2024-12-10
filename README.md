@@ -144,9 +144,10 @@ We provide both the python and rust-based implementation here.
    ```
 
    With Python
-    ```bash
-    python main.py update_record <id> <MedInc> <HouseAge> <AveRooms> <AveBedrms> <Population> <AveOccup> <Latitude> <Longitude> <MedHouseVal>
-    ```
+   ```bash
+   python main.py update_record <id> <MedInc> <HouseAge> <AveRooms> <AveBedrms> <Population> <AveOccup> <Latitude> <Longitude> <MedHouseVal>
+   ```
+
 4. **Read Records**:
     Read all records:
     ```bash
@@ -164,6 +165,7 @@ We provide both the python and rust-based implementation here.
     ```bash
     # Rust binary
     ./target/release/peter_data_eng read --id <id>
+    
     # Rust cargo
     cargo run read --id <id>
 
@@ -225,5 +227,3 @@ Time taken: 309.027212ms
 ### LLM Contribution
 
 I've used LLM to double check and generate test cases and double check syntaxes for Rust. I also consulted ChatGPT on ideas to create the functions.
-
-

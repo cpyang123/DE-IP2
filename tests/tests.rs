@@ -53,6 +53,7 @@ async fn test_insert_and_select_record() -> Result<(), Box<dyn Error>> {
     sqlx::query("DROP TABLE IF EXISTS tbl_house_prices")
         .execute(&pool)
         .await?;
+        
     sqlx::query(
         "CREATE TABLE IF NOT EXISTS tbl_house_prices (
             id INTEGER PRIMARY KEY AUTOINCREMENT,

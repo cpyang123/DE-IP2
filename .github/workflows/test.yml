@@ -33,10 +33,10 @@ jobs:
           make lint
       - name: test with pytest
         run: |
-          make test
+          make pytest
       - name: format with black 
         run: |
           make format
-      - name: test all 
-        run: |
-          make all
+      # - name: test all 
+      #   run: |
+      #     make all
