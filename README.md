@@ -3,6 +3,8 @@
 
 # IP2 - Mini8 - Rust-version Command Line Tool for Managing House Price Records
 
+[![Quick Demo Video](https://www.youtube.com/watch?v=0EVFW7Jm_ko)]
+
 ## Overview
 
 This project provides a command-line interface (CLI) for managing house price records stored in a SQLite database. The tool allows users to create, read, update, and delete records in a database, as well as initialize the database with a predefined dataset.
