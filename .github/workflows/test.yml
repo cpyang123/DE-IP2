@@ -37,6 +37,11 @@ jobs:
       - name: format with black 
         run: |
           make pyformat
+      - name: Archive Binary
+        uses: actions/upload-artifact@v2
+        with:
+          name: optimized-binary
+          path: target/release/peter_data_eng
       # - name: test all 
       #   run: |
       #     make all
