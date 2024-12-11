@@ -8,17 +8,29 @@
 
 ## Overview
 
-This project provides a command-line interface (CLI) for managing house price records stored in a SQLite database. The tool allows users to create, read, update, and delete records in a database, as well as initialize the database with a predefined dataset.
+This project provides a command-line interface (CLI) that's implemented with both Rust and Python for managing house price records stored in a SQLite database. The tool allows users to create, read, update, and delete records in a database, as well as initialize the database with a predefined dataset.
 
 We provide both the python and rust-based implementation here.
 
 ## Features
+0. **Rust vs Python**:
+   To run the commands, prefix the commands with the appropriate calls to the code:
+   ```{bash}
+   # With Rust:
+   cargo run <command>
 
-1. **Initialize the Database**:
+   # Rust Binary
+   ./target/release/peter_data_eng
+
+   # Python
+   python main.ppy
+   ```
+   
+2. **Initialize the Database**:
    - Loads a CSV file (`train.csv`) containing house price data and stores it in a SQLite database.
    - Command: `init`
    
-2. **Create a New Record**:
+3. **Create a New Record**:
    - Allows users to insert a new house price record into the database with specified details such as median income, house age, and median house value.
    - Command: `create_record`
    - Required Arguments:
@@ -32,7 +44,7 @@ We provide both the python and rust-based implementation here.
      - `Longitude`
      - `MedHouseVal` (Median House Value)
 
-3. **Update an Existing Record**:
+4. **Update an Existing Record**:
    - Updates an existing house price record identified by an ID. All the attributes of the record can be modified.
    - Command: `update_record`
    - Required Arguments:
@@ -47,13 +59,13 @@ We provide both the python and rust-based implementation here.
      - `Longitude`
      - `MedHouseVal` (Median House Value)
 
-4. **Read Records**:
+5. **Read Records**:
    - Retrieves house price records from the database. Users can either retrieve all records or specify an ID to fetch a single record.
    - Command: `read`
    - Optional Argument:
      - `--id` (ID of the record to read; if not provided, all records are displayed)
 
-5. **Delete a Record**:
+6. **Delete a Record**:
    - Deletes a house price record from the database based on a provided ID.
    - Command: `delete_record`
    - Required Argument:
