@@ -3,6 +3,7 @@
 
 # IP2 - Mini8 - Rust-version Command Line Tool for Managing House Price Records
 
+## Demo Video
 [![Quick Demo Video](https://img.youtube.com/vi/0EVFW7Jm_ko/hqdefault.jpg)](https://www.youtube.com/watch?v=0EVFW7Jm_ko)
 
 ## Overview
